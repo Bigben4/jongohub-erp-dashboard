@@ -21,7 +21,7 @@
 
         
     <span class="fa-stack fa-lg">
-        <i class="fas fa-bars fa-stack-1x fa-inverse"></i>
+         <button class="menu-btn"> <i class="fas fa-bars fa-stack-1x fa-inverse"></i></button>
     </span>
 
   
@@ -104,9 +104,9 @@
 
 
     <div class="dashboard"><I class="fa fa-photo-film"></I>dashboard</div>
-     <div class="customer"><i class="fa fa-user-alt"></i>Customer</div>
+     <div class="customer"><i class="fa fa-user-alt"></i><a href="customerdata.html">Customer</a></div>
       <div class="customer customer-1"><div><i class="fa fa-bolt"></i>Sale</div> <i class="fa fa-arrow-left"></i></div>
-      <div class="customer"><i class="fa fa-"></i>Subscriptions</div>
+      <div class="customer"><i class="fa fa-book-bookmark"></i>Subscriptions</div>
       <div class="customer"><i class="fa fa-file-alt"></i>expenses</div>
       <div class="customer"><i class="fa fa-pagelines"></i>Contract</div>
       <div class="customer"><i class="fa fa-project-diagram"></i>Projects</div>
@@ -121,15 +121,163 @@
     
     
     </section>
+
+
     <section class="mainpage">
   
+    <nav class="mini-nav">
+
+        <div class="box">
+            <i class="fa fa-ticket-alt"></i>
+            <h3>Invoices Awaiting Payment 0/0</h3>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 0%; background: #4caf50; height: 8px; border-radius: 4px;"></div>
+            </div>
+            <style>
+            .progress-bar-container {
+                width: 100%;
+                background: #e0e0e0;
+                border-radius: 4px;
+                margin-top: 8px;
+            }
+            </style></div>
+
+        </div>
+
+        <div class="box">
+            <i class="fa fa-ticket-alt"></i>
+            <h3>Converted leads 0/0</h3>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 0%; background: #4caf50; height: 8px; border-radius: 4px;"></div>
+            </div>
+            <style>
+            .progress-bar-container {
+                width: 100%;
+                background: #e0e0e0;
+                border-radius: 4px;
+                margin-top: 8px;
+            }
+            </style></div>
+
+            <div class="box">
+            <i class="fa fa-ticket-alt"></i>
+            <h3>Project in progress 0/0</h3>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 0%; background: #4caf50; height: 8px; border-radius: 4px;"></div>
+            </div>
+            <style>
+            .progress-bar-container {
+                width: 100%;
+                background: #e0e0e0;
+                border-radius: 4px;
+                margin-top: 8px;
+            }
+            </style></div>
+
+            <div class="box">
+            <i class="fa fa-ticket-alt"></i>
+            <h3>Tasked not finished 0/0</h3>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 0%; background: #4caf50; height: 8px; border-radius: 4px;"></div>
+            </div>
+            <style>
+            .progress-bar-container {
+                width: 100%;
+                background: #e0e0e0;
+                border-radius: 4px;
+                margin-top: 8px;
+            }
+            </style></div>
+       
+        
+    </nav>
 
 
 
 
-    </section>
 
 
+
+
+     
+     <div class="cart">
+
+    <table style="width:100%; border-collapse: separate; border-spacing: 30px 0;">
+        <tr>
+            <th>Invoice Overview</th>
+            <th>Estimate Overview</th>
+            <th>Proposal Overview</th>
+        </tr>
+        <tr>
+            <td>
+                <div class="progress-bar-container"><label>Paid</label>
+                    <div class="progress-bar" style="width: 80%; background: #4caf50; height: 8px; border-radius: 4px;"></div>
+                </div>
+                <div class="progress-bar-container"><label>Unpaid</label>
+                    <div class="progress-bar" style="width: 20%; background: #f44336; height: 8px; border-radius: 4px;"></div>
+                </div>
+                <div class="progress-bar-container"><label>Overdue</label>
+                    <div class="progress-bar" style="width: 10%; background: #ff9800; height: 8px; border-radius: 4px;"></div>
+                </div>
+                <div class="progress-bar-container"><label>Draft</label>
+                    <div class="progress-bar" style="width: 5%; background: #9e9e9e; height: 8px; border-radius: 4px;"></div>
+                </div>
+                <div class="progress-bar-container"><label>Cancelled</label>
+                    <div class="progress-bar" style="width: 2%; background: #607d8b; height: 8px; border-radius: 4px;"></div>
+                </div>
+                <div class="progress-bar-container"><label>Sent</label>
+                    <div class="progress-bar" style="width: 60%; background: #2196f3; height: 8px; border-radius: 4px;"></div>
+                </div>
+            </td>
+            <td>
+                <div class="progress-bar-container"><label>Accepted</label>
+                    <div class="progress-bar" style="width: 70%; background: #4caf50; height: 8px; border-radius: 4px;"></div>
+                </div>
+                <div class="progress-bar-container"><label>Declined</label>
+                    <div class="progress-bar" style="width: 10%; background: #f44336; height: 8px; border-radius: 4px;"></div>
+                </div>
+                <div class="progress-bar-container"><label>Pending</label>
+                    <div class="progress-bar" style="width: 20%; background: #ff9800; height: 8px; border-radius: 4px;"></div>
+                </div>
+                <div class="progress-bar-container"><label>Expired</label>
+                    <div class="progress-bar" style="width: 5%; background: #9e9e9e; height: 8px; border-radius: 4px;"></div>
+                </div>
+                <div class="progress-bar-container"><label>Draft</label>
+                    <div class="progress-bar" style="width: 3%; background: #607d8b; height: 8px; border-radius: 4px;"></div>
+                </div>
+                <div class="progress-bar-container"><label>Sent</label>
+                    <div class="progress-bar" style="width: 50%; background: #2196f3; height: 8px; border-radius: 4px;"></div>
+                </div>
+            </td>
+            <td>
+                <div class="progress-bar-container"><label>Accepted</label>
+                    <div class="progress-bar" style="width: 60%; background: #4caf50; height: 8px; border-radius: 4px;"></div>
+                </div>
+                <div class="progress-bar-container"><label>Declined</label>
+                    <div class="progress-bar" style="width: 15%; background: #f44336; height: 8px; border-radius: 4px;"></div>
+                </div>
+                <div class="progress-bar-container"><label>Pending</label>
+                    <div class="progress-bar" style="width: 25%; background: #ff9800; height: 8px; border-radius: 4px;"></div>
+                </div>
+                <div class="progress-bar-container"><label>Expired</label>
+                    <div class="progress-bar" style="width: 8%; background: #9e9e9e; height: 8px; border-radius: 4px;"></div>
+                </div>
+                <div class="progress-bar-container"><label>Draft</label>
+                    <div class="progress-bar" style="width: 4%; background: #607d8b; height: 8px; border-radius: 4px;"></div>
+                </div>
+                <div class="progress-bar-container"><label>Sent</label>
+                    <div class="progress-bar" style="width: 40%; background: #2196f3; height: 8px; border-radius: 4px;"></div>
+                </div>
+            </td>
+        </tr>
+    </table>
+    
+     </div>
+
+ 
+
+     </section>
+     
 
 
 

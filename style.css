@@ -1,5 +1,3 @@
-
-
 *{
     padding:0;
     margin:0;
@@ -11,17 +9,20 @@
 body{
     width:100%;
     height:100vh;
-
+    background: var(--background);
+    color: var(--text);
 }
 
 .navbar{
     width: 100%;
     height: 10vh;
-    background-color:white;
+    background: var(--primary);
+    color: var(--surface);
     display:flex;
     align-items: center;
     justify-content:space-between;
     border:1px solid lightgrey;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 
@@ -34,8 +35,8 @@ body{
 }
 
 .nav-1 .fa-stack{
-    color:black;
-    background-color:white;
+    color: var(--accent);
+    background: var(--primary);
     border-radius:50%;
     padding:5px;
 
@@ -64,14 +65,16 @@ img{
     padding:10px;
     width:80%;
     border:none;
-    background-color:lightgrey;
+    background: var(--background);
+    color: var(--text);
 }
 
-.nav-2 span{
-    background-color: rgb(42, 42, 241);
+.nav-2 span, .fa-icon{
+    background: var(--accent);
     margin-left:10px;
     padding:10px;
     border-radius:50px;
+    color: var(--primary);
 }
 
 .nav-2 span:hover{
@@ -97,10 +100,11 @@ img{
 .settings h1{
     font-size:15px;
     font-weight: 600;
+    color: var(--accent);
 }
 
 .settings i{
-   color:#fff;
+   color: var(--accent);
    -webkit-text-stroke:1px #000;
    margin-right:10px;
     
@@ -113,6 +117,11 @@ img{
     display:flex;
     align-items: center;
     justify-content:space-evenly; 
+}
+
+.icons i {
+    color: var(--accent);
+    font-size: 1.2rem;
 }
 
 
@@ -128,39 +137,39 @@ img{
 }
 
 .sidemenu{
-    background-color:lightgray;
+    background: var(--primary);
+    color: var(--surface);
     width:17%;
     height:90vh;
     display:flex;
     align-items: center;
     justify-content:start;
     flex-direction: column;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.05);
 }
 
-.mainpage{
-    width:80%;
-    background-color:green;
-    height: inherit;
-}
+
 
 .user{
   width:90%;
   height:10vh;
   border-radius:8px;
-  box-shadow: 2px 2px 4px black;
+  box-shadow: 2px 2px 4px var(--muted);
   display:flex;
+  margin-top:5px;
   padding: 5px;
   flex-direction:row;
   align-items: center;
-
+  background: var(--surface);
+  color: var(--primary);
 }
 
 .user-icon{
     width:50px;
     height:100%;
-    background-color:gray;
+    background: var(--accent);
+    color: var(--primary);
      border-radius:50px;
-     color:white;
      display:flex;
      align-items:center;
      justify-content: center;
@@ -182,12 +191,14 @@ img{
 .user-info h1{
      overflow: hidden;
     font-size:15px;
+    color: var(--primary);
     
 }
 
 .user-info p{
     overflow-y:hidden;
     scrollbar-width:none;
+    color: var(--muted);
 }
 
 
@@ -200,10 +211,15 @@ img{
     display:flex;
     justify-content:start;
     padding:5px;
+    background: var(--surface);
+    color: var(--primary);
+    font-weight: 500;
+    box-shadow: 1px 1px 3px var(--muted);
 }
 
 .dashboard i{
     margin-right:5px;
+    color: var(--accent);
 }
 
 .customer{
@@ -214,10 +230,15 @@ img{
     align-items:start;
     justify-content:start;
     padding:5px;
+    background: var(--surface);
+    color: var(--primary);
+    font-weight: 500;
+    box-shadow: 1px 1px 3px var(--muted);
 }
 
 .customer i{
     margin-right:5px;
+    color: var(--accent);
 }
 
  .customer-1{
@@ -228,6 +249,141 @@ img{
     display:flex;
     flex-direction: row;
 }
+
+
+/* main section with graphs */
+
+.mainpage{
+    width:90%;
+    background: var(--surface);
+    height: inherit;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 2rem 2.5rem;
+}
+
+/* Hamburger menu button for mobile */
+.menu-btn {
+    display: block;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+    background: #2d3748;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+    .nav-1, .nav-2, .nav-3 {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    .nav-1 .fa-stack,
+    .nav-2 .fa-stack,
+    .nav-3 .fa-stack {
+        margin-right: 16px;
+        margin-left: 8px;
+        font-size: 1.5rem;
+        display: inline-flex;
+        align-items: center;
+    }
+    .nav-1 .fa-inverse,
+    .nav-2 .fa-inverse,
+    .nav-3 .fa-inverse {
+        margin-right: 8px;
+        margin-left: 4px;
+        font-size: 1.3rem;
+        display: inline-flex;
+        align-items: center;
+    }
+    .settings, .icons {
+        width: 100%;
+        justify-content: center;
+    }
+    .icons {
+        justify-content: space-evenly !important;
+    }
+    .main-section {
+        flex-direction: column;
+        height: auto;
+    }
+    .sidemenu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 70vw;
+        height: 100vh;
+        background: lightgray;
+        box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+        transition: left 0.3s ease;
+        z-index: 1000;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding-top: 60px;
+    }
+    .sidemenu.open {
+        left: 0;
+    }
+    .mainpage {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Professional color palette based on logo */
+:root {
+    --primary: #1a237e; /* Deep blue */
+    --accent: #ffd600; /* Gold/yellow */
+    --background: #f4f6f8; /* Light background */
+    --surface: #fff; /* Card/table background */
+    --text: #212121; /* Dark text */
+    --muted: #757575; /* Muted text */
+    --danger: #e53e3e; /* Red for delete */
+    --danger-dark: #c53030;
+}
+
+
+/* mini navbar  */
+
+.mini-nav{
+    height: 15vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid lightgrey;
+    padding: 0 24px;
+    border-radius:8px;
+}
+
+
+.progress-bar-container {
+        width: 90%;
+        background: #e0e0e0;
+        border-radius: 4px;
+        margin: 8px 0;
+        padding: 4px 8px;
+    }
+    .progress-bar-container label {
+        font-size: 13px;
+        display: block;
+        margin-bottom: 2px;
+        color: #333;
+    }
 
 
 

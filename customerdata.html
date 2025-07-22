@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="customerdata.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Customer</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-1">
+            <span class="fa-stack fa-lg"><button class="menu-btn"> <i class="fas fa-bars fa-stack-1x fa-inverse"></i></button></span>
+            <img src="logo.png" alt="Logo" />
+        </div>
+        <div class="nav-2">
+            <input type="text" placeholder="search">
+            <span class="fa-icon"><i class="fas fa-plus"></i></span>
+        </div>
+        <div class="nav-3">
+            <div class="settings">
+                <i class="fa fa-gear"></i>
+                <h1>Settings</h1>
+            </div>
+            <div class="icons">
+                <i class="fas fa-share-alt"></i>
+                <i class="fa fa-clipboard-check"></i>
+                <i class="fa fa-clock"></i>
+                <i class="fa fa-bell"></i>
+            </div>
+        </div>
+    </nav>
+    <div class="main-section">
+        <aside class="sidemenu">
+            <div class="user">
+                <div class="user-icon"><i class="fa fa-user"></i></div>
+                <div class="user-info">
+                    <h1>Tumbu john</h1>
+                    <p>tunbujohn@jongohub.com</p>
+                </div>
+            </div>
+            <div class="dashboard"><i class="fa fa-photo-film"></i>dashboard</div>
+            <div class="customer"><i class="fa fa-user-alt"></i><a href="customerdata.html">Customer</a></div>
+            <div class="customer customer-1"><div><i class="fa fa-bolt"></i>Sale</div> <i class="fa fa-arrow-left"></i></div>
+            <div class="customer"><i class="fa fa-book-bookmark"></i>Subscriptions</div>
+            <div class="customer"><i class="fa fa-file-alt"></i>expenses</div>
+            <div class="customer"><i class="fa fa-pagelines"></i>Contract</div>
+            <div class="customer"><i class="fa fa-project-diagram"></i>Projects</div>
+            <div class="customer"><i class="fa fa-clock-four"></i>Task</div>
+            <div class="customer"><i class="fa fa-user-clock"></i>Support</div>
+            <div class="customer"><i class="fa fa-truck-moving"></i>Lead</div>
+            <div class="customer"><i class="fa fa-file-archive"></i>Estimate Request</div>
+            <div class="customer"><i class="fa fa-circle-question"></i>Knowledge base</div>
+            <div class="customer customer-1"><div><i class="fa fa-circle-dot"></i>Utility</div> <i class="fa fa-arrow-left"></i></div>
+            <div class="customer customer-1"><div><i class="fa fa-chart-area"></i>Report</div> <i class="fa fa-arrow-left"></i></div>
+            <div class="customer"><i class="fa fa-gear"></i>Setup</div>
+        </aside>
+        <main class="mainpage">
+            <h2 class="customer-title">Customer Data Sheet</h2>
+            <div class="customer-actions">
+                <button id="addCustomerBtn" class="add-btn">Add Customer</button>
+            </div>
+            <div>
+                <table id="customer-table" class="customer-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Company</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Example row, replace with dynamic data -->
+                        <tr>
+                            <td>John Doe</td>
+                            <td>john@example.com</td>
+                            <td>123-456-7890</td>
+                            <td>Acme Corp</td>
+                            <td class="action-cell">
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Modal for adding customer -->
+            <div id="customerModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <h3>Add New Customer</h3>
+                    <form id="customerForm">
+                        <input type="text" id="name" name="name" placeholder="Name" required>
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                        <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+                        <input type="text" id="company" name="company" placeholder="Company">
+                        <button type="submit" class="add-btn">Add</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>
+    // Modal logic
+    const addBtn = document.getElementById('addCustomerBtn');
+    const modal = document.getElementById('customerModal');
+    const closeBtn = document.querySelector('.close-btn');
+    const form = document.getElementById('customerForm');
+    const table = document.getElementById('customer-table').getElementsByTagName('tbody')[0];
+
+    addBtn.onclick = function() { modal.style.display = 'block'; };
+    closeBtn.onclick = function() { modal.style.display = 'none'; };
+    window.onclick = function(event) { if (event.target == modal) modal.style.display = 'none'; };
+
+    form.onsubmit = function(e) {
+        e.preventDefault();
+        const name = form.name.value.trim();
+        const email = form.email.value.trim();
+        const phone = form.phone.value.trim();
+        const company = form.company.value.trim();
+        if (name && email && phone) {
+            const row = table.insertRow();
+            row.insertCell(0).textContent = name;
+            row.insertCell(1).textContent = email;
+            row.insertCell(2).textContent = phone;
+            row.insertCell(3).textContent = company;
+            const actionCell = row.insertCell(4);
+            actionCell.className = 'action-cell';
+            const delBtn = document.createElement('button');
+            delBtn.className = 'delete-btn';
+            delBtn.textContent = 'Delete';
+            actionCell.appendChild(delBtn);
+            modal.style.display = 'none';
+            form.reset();
+        }
+    };
+    // Delete row functionality
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('delete-btn')) {
+            const row = e.target.closest('tr');
+            if (row) row.remove();
+        }
+    });
+    </script>
+</body>
+</html>
