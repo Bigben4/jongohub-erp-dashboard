@@ -49,3 +49,9 @@ window.addEventListener('DOMContentLoaded', function() {
                 todoList.appendChild(li);
             });
         }
+
+
+
+        // add to sale functions
+
+   
